@@ -1,19 +1,29 @@
+import { revalidatePath } from "next/cache";
+import Link from "next/link";
+
 const todos: string[] = ["First goal"];
 
-export default function Home() {
+export default async function Home() {
+  "use server"
   async function addToDo (data: FormData) {
     "use server"
     const todo = data.get('todo') as string
     todos.push(todo);
+    revalidatePath('/');
   }
 
   return (
     <main className="p-5">
       <h1 className="text-4xl font-bold">Todo list:</h1>
       <ul>
-        {todos.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
+        <li>
+          <Link href="/todo-list">Todo List</Link>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <Link href="/products">Products</Link>
+        </li>
       </ul>
       <form action={addToDo}>
         <input
