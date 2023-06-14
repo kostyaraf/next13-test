@@ -23,6 +23,7 @@ export default async function Home() {
             Mix server & client components.
             <br />
             Server component get fetch request and saving in
+            <br />
             <b>client component state</b>
           </div>
         </li>
