@@ -23,7 +23,7 @@ export default function Products() {
   }
 
   return (
-    <main className="p-5">
+    <main className="p-5" style={{ minHeight: '110vh'}}>
       <PageTitle>Products</PageTitle>
       <SearchProducts onSearch={onSearch} />
       {/* <AddForm addToDo={addToDo} /> */}

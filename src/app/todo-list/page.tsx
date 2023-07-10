@@ -30,7 +30,7 @@ export default function FormPost() {
   }
 
   return (
-    <main className="p-5">
+    <main className="p-5" style={{ minHeight: '110vh'}}>
       <PageTitle>Todo list</PageTitle>
       <AddForm addToDo={addToDo} />
       <ul style={{ width: 300 }}>
