@@ -5,7 +5,9 @@ const nextConfig = {
     },
     images: {
         domains: [
-            'fakestoreapi.com'
+            'fakestoreapi.com',
+            'api.slingacademy.com',
+            'https://api.slingacademy.com'
         ]
     }
 }

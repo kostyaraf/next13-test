@@ -10,13 +10,15 @@ export default function ProductCard({ product }: Props) {
       <div className="text-2xl mb-2 text-center">{product.title}</div>
       <div className="mb-4 text-gray-500 line-clamp-2">{product.description}</div>
       <div className="flex flex-grow">
-      <Image
-        className="m-auto"
-        src={product.image}
-        alt={product.title}
-        width={200}
-        height={100}
-      />
+        <Image
+          className="w-full h-auto m-auto"
+          src={product.image}
+          alt={product.title}
+          width={200}
+          height={100}
+          loading="lazy"
+          // fill
+          />
       </div>
     </div>
   );

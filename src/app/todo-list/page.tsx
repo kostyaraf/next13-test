@@ -10,6 +10,11 @@ type ToDoType = {
 
 let todos: ToDoType[] = [{ text: "First goal", id: 0 }];
 
+export const metadata = {
+  title: 'Todo List',
+  description: 'Example of todo list',
+}
+
 export default function FormPost() {
   async function addToDo(data: string) {
     "use server";
