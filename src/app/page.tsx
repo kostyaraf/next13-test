@@ -21,16 +21,23 @@ export default async function Home() {
             (yeah, not recommended, but interesting)
           </div>
         </li>
+        
+        <li className="mb-2">
+          <Link href="/todo-list-form" className="text-1xl">
+            Todo List Form
+          </Link>
+          <div className="text-gray-500">
+            Try to show experimental server actions functionality.
+          </div>
+        </li>
 
         <li className="mb-2">
           <Link href="/products" className="text-1xl">
             Products
           </Link>
           <div className="text-gray-500">
-            Mix server & client components.
-            <br />
-            Server component get fetch request and saving in
-            <br />
+            Mix server & client components.<br />
+            Server component get fetch request and saving in<br />
             <b>client component state</b>
           </div>
         </li>
@@ -40,7 +47,10 @@ export default async function Home() {
             Posts
           </Link>
           <div className="text-gray-500">
-            Server components with dynamic routes.
+            Server components with dynamic routes.<br/>
+            Static & dynamic metadata.<br/>
+            Extra layout for single post page.<br/>
+            Templates for loading of server component & error handler.
           </div>
         </li>
       </ul>

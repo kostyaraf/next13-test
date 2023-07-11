@@ -11,9 +11,13 @@ export default function AddForm({ addToDo }: Props) {
 
   const onSubmit = async () => {
     startTransition(async () => {
+      
+      await new Promise((resolve) => setTimeout(resolve, 30))
+      
       await addToDo(todoRef.current!.value);
+      todoRef.current!.value = "";
     });
-    todoRef.current!.value = "";
+    
   };
 
   return (

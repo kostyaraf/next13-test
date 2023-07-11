@@ -1,10 +1,9 @@
 import PageTitle from "@/Components/PageTitle";
 import SearchProducts from "./Components/client/SearchProducts";
 
-
-// let productList: ProductModel[] = []
-
 export default function Products() {
+
+  // Search Server Action
   async function onSearch(data?: string) {
     "use server";
     try {
@@ -26,7 +25,6 @@ export default function Products() {
     <main className="p-5" style={{ minHeight: '110vh'}}>
       <PageTitle>Products</PageTitle>
       <SearchProducts onSearch={onSearch} />
-      {/* <AddForm addToDo={addToDo} /> */}
     </main>
   );
 }
