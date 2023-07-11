@@ -1,13 +1,13 @@
-// "use client"
 import PageTitle from "@/Components/PageTitle";
-// import Error from "next/error";
 import Image from "next/image";
 import Link from "next/link";
 
+// Get single post server function
 const getPosts = async (id: number) => {
   try {
     const response: any = await fetch(`https://api.slingacademy.com/v1/sample-data/blog-posts/${id}`, {
       next: {
+        // Сколько секунд сервер будет хранить результат запроса
         revalidate: 60,
       }})
 
@@ -20,7 +20,6 @@ const getPosts = async (id: number) => {
   } catch (error) {
     throw error;
   }
-
 }
 
 type Props = {
@@ -29,11 +28,18 @@ type Props = {
   }
 }
 
-// export const generateMetaData = ({ params }) 
+// Generation meta data in async server function
+// the same props like on a page component
+export async function generateMetadata ({ params }: Props) {
+  const post: PostModel = await getPosts(params.id);
+  return {
+    title: `Post | ${post.title}`,
+    description: post.description,
+  }
+}
 
 export default async function Posts({ params }: Props) {
   const post: PostModel = await getPosts(params.id);
-  // if (!post?.id) throw post
 
   return (
     <main className="p-5">

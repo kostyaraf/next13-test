@@ -1,14 +1,17 @@
 import Link from "next/link";
 import Navigation from "../Navigation";
-// import Logo from './home.svg';
 
-export default function Header() {
+type Props = {
+  color?: string;
+}
+
+export default function Header({color}: Props) {
   return (
     <div
       style={{
         width: "100%",
         height: 60,
-        background: "#000",
+        background: color || "#000",
         color: "#fff",
         display: "flex",
         alignItems: "center",
@@ -16,6 +19,7 @@ export default function Header() {
         position: 'relative',
       }}
     >
+
       <div style={{ position: 'absolute', left: 20, top: 15 }}>
         <Link href="/">
           <svg

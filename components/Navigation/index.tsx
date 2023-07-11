@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 
 const NAV_ITEMS = [
   { url: "/todo-list", label: "Todo List" },
+  { url: "/todo-list-form", label: "Todo List Form" },
   { url: "/products", label: "Products" },
   { url: "/posts", label: "Posts" },
 ];
