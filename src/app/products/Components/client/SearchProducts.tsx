@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useRef, useState, useTransition } from "react";
 import ProductList from "../server/ProductList";
 
@@ -13,7 +14,6 @@ export default function SearchProducts({ onSearch }: Props) {
 
   const searchAction = async (val: string) => {
     const newProduct = await onSearch(val);
-    console.log(">> newPr", newProduct);
     setProducts(newProduct);
   };
 
@@ -38,6 +38,7 @@ export default function SearchProducts({ onSearch }: Props) {
           onKeyDown={(key) => {
             if (key.key == "Enter") onSubmit();
           }}
+          onChange={(e) => { searchAction(e.target.value) }}
         />
         <button
           disabled={pending}

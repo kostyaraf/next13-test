@@ -10,14 +10,22 @@ type ToDoType = {
 
 let todos: ToDoType[] = [{ text: "First goal", id: 0 }];
 
+export const metadata = {
+  title: 'Todo List',
+  description: 'Example of todo list',
+}
+
 export default function FormPost() {
+
+  // Add item into list
   async function addToDo(data: string) {
     "use server";
     const newId = todos?.length ? todos[todos.length - 1].id + 1 : 0; 
     todos.push({ text: data, id: newId });
     revalidatePath("/form-post");
   }
-
+  
+  // Add item from list
   async function deleteToDo(id: number) {
     "use server";
     todos = todos.filter((item) => item.id !== id);
@@ -25,9 +33,12 @@ export default function FormPost() {
   }
 
   return (
-    <main className="p-5">
+    <main className="p-5" style={{ minHeight: '110vh'}}>
+
       <PageTitle>Todo list</PageTitle>
+      
       <AddForm addToDo={addToDo} />
+      
       <ul style={{ width: 300 }}>
         {todos.map((item) => (
           <li
